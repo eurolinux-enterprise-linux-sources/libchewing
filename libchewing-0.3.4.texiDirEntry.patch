@@ -1,0 +1,14 @@
+diff -up ./doc/libchewing.texi.texiDirEntry ./doc/libchewing.texi
+--- ./doc/libchewing.texi.texiDirEntry	2012-12-10 22:59:28.000000000 +1000
++++ ./doc/libchewing.texi	2013-02-26 22:52:36.604748803 +1000
+@@ -4,6 +4,10 @@
+ @settitle libchewing
+ @c %**end of header
+ @include version.texi
++@dircategory Localization
++@direntry
++* libchewing: (libchewing).           The libchewing reference manual.
++@end direntry
+ @copying
+ This is the ``libchewing Reference Manual'' corresponding to libchewing
+ version @value{VERSION}.

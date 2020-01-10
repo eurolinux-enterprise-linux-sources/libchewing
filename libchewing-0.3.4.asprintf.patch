@@ -1,0 +1,11 @@
+diff -up src/chewingutil.c.asprintf src/chewingutil.c
+--- src/chewingutil.c.asprintf	2013-02-03 10:45:45.202307401 +1000
++++ src/chewingutil.c	2013-02-03 10:46:49.105306792 +1000
+@@ -17,6 +17,7 @@
+ #include <config.h>
+ #endif
+ 
++#define _GNU_SOURCE
+ #include <ctype.h>
+ #include <string.h>
+ #include <stdio.h>
