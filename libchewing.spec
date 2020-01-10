@@ -2,7 +2,7 @@
 %global name_zh_TW %{im_name_zh_TW}函式庫
 Name:           libchewing
 Version:        0.3.4
-Release:        3%{?dist}
+Release:        6%{?dist}
 Summary:        Intelligent phonetic input method library for Traditional Chinese
 Summary(zh_TW): %{name_zh_TW}
 
@@ -109,7 +109,7 @@ mkdir -p contrib/python
 cp %SOURCE1 contrib/python
 
 %build
-export CFLAGS=-DLIBINSTDIR='\"%{_libdir}\" -g'
+CFLAGS="%{optflags} -g -DLIBINSTDIR='%{_libdir}'"
 autoreconf -ivf
 %configure --disable-static
 %{__make} RPM_CFLAGS="%{optflags}" %{_smp_mflags}
@@ -156,6 +156,16 @@ fi
 %{libchewing_python_dir}
 
 %changelog
+* Tue Mar 04 2014 Ding-Yi Chen <dchen at redhat dot com> - 0.3.4-6
+- CFLAGS: Use optflags
+- Resolves: rhbz#1070770
+
+* Fri Jan 24 2014 Daniel Mach <dmach@redhat.com> - 0.3.4-5
+- Mass rebuild 2014-01-24
+
+* Fri Dec 27 2013 Daniel Mach <dmach@redhat.com> - 0.3.4-4
+- Mass rebuild 2013-12-27
+
 * Thu Feb 27 2013 Ding-Yi Chen <dchen at redhat dot com> - 0.3.4-3
 - Fixed [Bug 913214] libchewing complains "no info dir entry" while installing
   Add direntry in libchewing.texi so it can be listed under 
